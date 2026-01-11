@@ -748,7 +748,7 @@ img {
   background-color: black;
   padding: 2rem 0;
 
-  animation: slide 30s linear infinite;
+  animation: slide 60s linear infinite;
 
   will-change: transform;
   transform: translateZ(0);
@@ -810,7 +810,7 @@ img {
   background-color: rgb(255, 255, 255);
   padding: 2rem 0;
   border-bottom: 2px solid black;
-  animation: slide 30s linear infinite;
+  animation: slide 60s linear infinite;
 
   will-change: transform;
   transform: translateZ(0);

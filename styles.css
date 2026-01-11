@@ -2090,7 +2090,7 @@ img {
   flex-wrap: nowrap;
   width: max-content;
   will-change: transform;
-  animation: loop-left-top 55s linear infinite;
+  animation: loop-left-top 115s linear infinite;
 }
 
 /* FORCE CONSISTENT CARD WIDTHS */
@@ -2112,7 +2112,7 @@ img {
   flex-wrap: nowrap;
   width: max-content;
   will-change: transform;
-  animation: loop-right 55s linear infinite;
+  animation: loop-right 115s linear infinite;
 }
 
 @keyframes loop-right {
@@ -2180,8 +2180,8 @@ img {
 
 @media (max-width: 1600px) {
   .testimonial-card {
-    min-width: 400px;
-    max-width: 620px;
+    min-width: 200px;
+    max-width: 320px;
     padding-top: 2.2rem;
   }
 }
