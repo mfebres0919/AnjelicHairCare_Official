@@ -592,7 +592,7 @@ h1 {
   }
 
   #cs-navigation .cs-social-link:hover {
-    background-color: var(--primary);
+    background-color: black;
   }
 
   #cs-navigation .cs-social-link:hover .cs-social-icon {
@@ -1209,7 +1209,7 @@ h1 {
   }
 
   #cs-navigation .cs-social-link:hover {
-    background-color: var(--primary);
+    background-color: black;
   }
 
   #cs-navigation .cs-social-link:hover .cs-social-icon {
