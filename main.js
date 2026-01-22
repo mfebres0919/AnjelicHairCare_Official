@@ -2,11 +2,59 @@
 console.log("Brand video JS loaded");
 
 
+/* =========================
+   SCROLL REVEALS (JS)
+   ========================= */
+let revealsInitialized = false;
 
+function initScrollReveals() {
+  if (revealsInitialized) return;
+  revealsInitialized = true;
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const singles = document.querySelectorAll(".reveal");
+  const groups  = document.querySelectorAll(".reveal-group");
+
+  if (reduceMotion) {
+    singles.forEach(el => el.classList.add("is-in"));
+    groups.forEach(el => el.classList.add("is-in"));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+
+      // If it's a group, stagger its children once it becomes visible
+      if (el.classList.contains("reveal-group")) {
+        const step = Number(el.dataset.stagger || 120); // ms
+        [...el.children].forEach((child, i) => {
+          child.style.setProperty("--d", `${i * step}ms`);
+        });
+      }
+
+      el.classList.add("is-in");
+      io.unobserve(el);
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -10% 0px" });
+
+  singles.forEach(el => io.observe(el));
+  groups.forEach(el => io.observe(el));
+}
+
+/* =========================
+   PRELOADER (UPDATED)
+   ========================= */
 // Preloader functionality
 document.addEventListener('DOMContentLoaded', function () {
   const preloader = document.getElementById('preloader');
-  if (!preloader) return;
+  if (!preloader) {
+    // If no preloader exists, start reveals immediately
+    initScrollReveals();
+    return;
+  }
 
   const enterDuration = 1500 + (7 * 150);
 
@@ -17,6 +65,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(() => {
       preloader.classList.add('done');
+
+      // ✅ Start reveals as soon as preloader is "done"
+      // (so the user doesn't wait longer than needed)
+      initScrollReveals();
 
       setTimeout(() => {
         if (preloader.parentNode) {
@@ -35,6 +87,8 @@ setTimeout(() => {
   if (preloader) {
     preloader.remove();
   }
+  // ✅ If preloader got stuck, still start reveals
+  initScrollReveals();
 }, 5000);
 
 
@@ -199,3 +253,43 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial sync (important)
   updateActiveState();
 })();
+
+
+
+
+
+// TRANSITIONS
+
+function initScrollReveals() {
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const singles = document.querySelectorAll(".reveal");
+  const groups  = document.querySelectorAll(".reveal-group");
+
+  if (reduceMotion) {
+    singles.forEach(el => el.classList.add("is-in"));
+    groups.forEach(el => el.classList.add("is-in"));
+    return;
+  }
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+
+      const el = entry.target;
+
+      // If it's a group, stagger its children once it becomes visible
+      if (el.classList.contains("reveal-group")) {
+          const step = Number(el.dataset.stagger || 200); // ms
+        [...el.children].forEach((child, i) => {
+          child.style.setProperty("--d", `${i * step}ms`);
+        });
+      }
+
+      el.classList.add("is-in");
+      io.unobserve(el);
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -10% 0px" });
+
+  singles.forEach(el => io.observe(el));
+  groups.forEach(el => io.observe(el));
+}

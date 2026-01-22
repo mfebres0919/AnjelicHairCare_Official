@@ -1322,3 +1322,68 @@ h6 {
   width: 1.2em;     /* scales exactly with text */
   height: auto;
 }
+
+
+
+
+
+/* ========== TRANSITIONS ==========*/
+:root{
+  --rv-ease: cubic-bezier(0.22, 1, 0.36, 1); /* smooth + natural */
+  --rv-dur: 1000ms;    /* slower animation */
+  --rv-y: 18px;       /* a touch more float */
+  --rv-stagger: 200ms;/* still quick, but smoother */
+}
+
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal-group > *{
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+}
+
+/* Base reveal */
+.reveal{
+  opacity: 0;
+  transform: translate3d(0, var(--rv-y), 0);
+  filter: blur(6px);
+  transition:
+    opacity var(--rv-dur) var(--rv-ease),
+    transform var(--rv-dur) var(--rv-ease),
+    filter var(--rv-dur) var(--rv-ease);
+  will-change: opacity, transform, filter;
+}
+
+.reveal.is-in{
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  filter: blur(0);
+}
+
+/* Group stagger: apply to a container, its direct children will stagger */
+.reveal-group > *{
+  opacity: 0;
+  transform: translate3d(0, var(--rv-y), 0);
+  filter: blur(6px);
+  transition:
+    opacity var(--rv-dur) var(--rv-ease),
+    transform var(--rv-dur) var(--rv-ease),
+    filter var(--rv-dur) var(--rv-ease);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-group.is-in > *{
+  opacity: 1;
+  transform: translate3d(0,0,0);
+  filter: blur(0);
+}
+
+/* Delay is injected by JS via --d */
+.reveal[style*="--d"],
+.reveal-group > *[style*="--d"]{
+  transition-delay: var(--d);
+}

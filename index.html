@@ -15,7 +15,7 @@
 <div class="preloader" id="preloader">
   <div class="preloader-name">
     <h1><span>Anjelic</span></h1>
-    <h1><span>Hair Care</span></h1>
+    <h1><span>Haircare</span></h1>
   </div>
 
   <div class="preloader-bars">
@@ -161,22 +161,32 @@
 
 
 
-
 <!--------------------------------->
 <!----------HERO SECTION----------->
 <!--------------------------------->
 <section class="hero-section">
-    <div class="hero-container">
-        <div class="hero-content">
-            <h1>WELCOME TO ANJELIC HAIRCARE</h1>
-            <p>We specialize in all-natural hair and skin care products 
-                designed to nourish, refine, and restore. Each blend is
-                crafted with high-quality botanicals to deliver a luxurious 
-                experience that honors your beauty from crown to skin.</p>
-        </div>
-        <div class="btn-container"><a class="btn-1" href="./html/shop.html">SHOP NOW</a></div> 
+  <div class="hero-container">
+
+    <div class="hero-content reveal-group" data-stagger="80">
+      <h1>WELCOME TO ANJELIC HAIRCARE</h1>
+      <p>
+        We specialize in all-natural hair and skin care products 
+        designed to nourish, refine, and restore. Each blend is
+        crafted with high-quality botanicals to deliver a luxurious 
+        experience that honors your beauty from crown to skin.
+      </p>
     </div>
+
+    <!-- button stays in its original spot so width stays the same -->
+    <div class="btn-container reveal" style="--d:160ms">
+      <a class="btn-1" href="./html/shop.html">SHOP NOW</a>
+    </div>
+
+  </div>
 </section>
+
+
+
 
 
 
@@ -231,15 +241,13 @@
 <!----------SHOP SECTION------------>
 <!---------------------------------->
 <section class="shop-section">
-
-    <!-- CARD 1 -->
-    <div class="card-1">
-        <div class="card-1-content">
-            <h1>MULTIPURPOSE SHEA BUTTER</h1>
-            <p>A rich, all-in-one blend crafted to deeply nourish both hair and skin. Our Multipurpose Shea Butter delivers lasting moisture, promotes healthy growth, and restores softness without feeling heavy or greasy.</p>
-            <a class="btn-2" href="./html/shop.html">SHOP NOW</a>
-        </div>
+  <div class="card-1">
+    <div class="card-1-content reveal-group" data-stagger="80">
+      <h1>MULTIPURPOSE SHEA BUTTER</h1>
+      <p>A rich, all-in-one blend crafted to deeply nourish both hair and skin. Our Multipurpose Shea Butter delivers lasting moisture, promotes healthy growth, and restores softness without feeling heavy or greasy.</p>
+      <a class="btn-2" href="./html/shop.html">SHOP NOW</a>
     </div>
+  </div>
 </section>
 
 
@@ -291,43 +299,45 @@
 
 
 
-
 <!-- WHY US SECTION -->
 <section class="why-us-section">
     <!-- MAIN BOX HOLDING EVERYTHING ASIDE FROM THE IMAGE -->
     <div class="why-us-content">
         <!-- ONLY THE H1 AND P -->
-        <div class="why-us-titles">
+        <div class="why-us-titles reveal-group" data-stagger="80">
             <h1>WHY CHOOSE ANJELIC HAIRCARE?</h1>
             <p>At Anjelic Hair Care, we care deeply for both your hair and your skin, because true beauty begins with nurturing every part of you.</p> 
         </div>
+
         <div class="why-us-content-2">
-                    <!-- HOLDS THE REASONS BUT IS STILL APART OF THE CONTENT -->
+            <!-- HOLDS THE REASONS -->
             <div class="reason-boxes">
                 <!-- REASON #1 -->
-                <div class="reason-1">
+                <div class="reason-1 reveal">
                     <h1>01</h1>
                     <p>Every product is handmade in small batches using nourishing ingredients that prioritize the health of your hair and your skin.</p>
                 </div>
                 <hr class="reason-line">
 
-
                 <!-- REASON #2 -->
-                <div class="reason-1">
+                <div class="reason-1 reveal">
                     <h1>02</h1>
                     <p>Formulated for natural textures and skin that deserves to glow. Free of harsh chemicals and full of moisture, strength, and confidence with every use.</p>
                 </div>
                 <hr class="reason-line">
-                
-                
+
                 <!-- REASON #3 -->
-                <div class="reason-1">
+                <div class="reason-1 reveal">
                     <h1>03</h1>
                     <p>We celebrate natural beauty and the power that comes with embracing your authentic self.</p>
                 </div>
                 <hr class="reason-line">
             </div>
-            <div class="why-us-img"><img class="shea-img2" src="images/choose-img.svg" alt="Image of product" height="300px" width="300px"></div>
+
+            <!-- IMAGE -->
+            <div class="why-us-img reveal" style="--d:120ms">
+                <img class="shea-img2" src="images/choose-img.svg" alt="Image of product" height="300px" width="300px">
+            </div>
         </div>
     </div>
 </section>
@@ -384,14 +394,15 @@
 <!----------------------------->
 <section class="testimonials-section">
 
-  <div class="testimonials-header">
+  <div class="testimonials-header reveal-group" data-stagger="90">
     <h1>HEAR FROM OUR CUSTOMERS</h1>
   </div>
+
 
   <div class="testimonials-carousel">
  
     <!-- TOP ROW (moves left) -->
-    <div class="carousel-row row-top">
+    <div class="carousel-row row-top reveal" style="--d:0ms">
       <div class="review-track">
         <!-- Original set -->
         <article class="testimonial-card">
@@ -789,7 +800,7 @@
     </div>
 
     <!-- BOTTOM ROW (moves right) -->
-    <div class="carousel-row row-bottom">
+    <div class="carousel-row row-bottom reveal" style="--d:140ms">
       <div class="review-track">
         <!-- Original set -->
         <!-- Original set -->
@@ -1192,7 +1203,7 @@
 <!-------- BRAND STORY VIDEO ------>
 <!--------------------------------->
 <section class="brand-video-section">
-  <div class="brand-video-content">
+  <div class="brand-video-content reveal-group" data-stagger="110">
     <h1>OUR STORY, IN HER WORDS</h1>
     <p>
       Learn more about the heart behind Anjelic Hair Care and the intention,
@@ -1211,6 +1222,7 @@
     </div>  
   </div>
 </section>
+
 
 
 
@@ -1281,34 +1293,39 @@
 <!----------------------------->
 <!---------- FOOTER----------->
 <!----------------------------->
-<footer>
-    <div class="footer-content">
-        <div class="footer-box">
-            <div class="footer-logo"><img src="images/anjelic-logo.svg" alt="logo"></div>
-        </div>
-        <div class="quick-links-box">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="./html/about.html">About</a></li>
-                <li><a href="./html/shop.html">Shop</a></li>
-                <li><a href="./html/faq.html">FAQs</a></li>
-                <li><a href="./html/contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <div class="quick-links-box">
-            <ul>
-                <li>(346)-298-4249</li>
-                <li>Anjelichaircare@gmail.com</li>
-                <li>12436 FM 1960 Rd W</li>
-                <li>Unit #1745 </li>
-                <li>Houston, TX 77065</li>
-            </ul>
-        </div>
+<footer class="reveal">
+  <div class="footer-content reveal-group" data-stagger="90">
+    <div class="footer-box">
+      <div class="footer-logo"><img src="images/anjelic-logo.svg" alt="logo"></div>
     </div>
-    <hr>
-    <div class="copyright"><p>© Copyright 2025 Anjelic Hair Care</p><div>
-</footer>
 
+    <div class="quick-links-box">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./html/about.html">About</a></li>
+        <li><a href="./html/shop.html">Shop</a></li>
+        <li><a href="./html/faq.html">FAQs</a></li>
+        <li><a href="./html/contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="quick-links-box">
+      <ul>
+        <li>(346)-298-4249</li>
+        <li>Anjelichaircare@gmail.com</li>
+        <li>12436 FM 1960 Rd W</li>
+        <li>Unit #1745</li>
+        <li>Houston, TX 77065</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="copyright reveal" style="--d:120ms">
+    <p>© Copyright 2025 Anjelic Hair Care</p>
+  </div>
+</footer>
 
 
 
