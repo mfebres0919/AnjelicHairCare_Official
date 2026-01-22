@@ -44,13 +44,23 @@ function initScrollReveals() {
   groups.forEach(el => io.observe(el));
 }
 
+
 /* =========================
    PRELOADER (UPDATED)
    ========================= */
 // Preloader functionality
 document.addEventListener('DOMContentLoaded', function () {
+
+  // ✅ NEW: mark preloader as active immediately (controls reveal timing)
+  document.documentElement.classList.add('preloader-active');
+  document.documentElement.classList.remove('preloader-done');
+
   const preloader = document.getElementById('preloader');
   if (!preloader) {
+    // ✅ NEW: if no preloader exists, allow reveals immediately
+    document.documentElement.classList.remove('preloader-active');
+    document.documentElement.classList.add('preloader-done');
+
     // If no preloader exists, start reveals immediately
     initScrollReveals();
     return;
@@ -65,6 +75,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setTimeout(() => {
       preloader.classList.add('done');
+
+      // ✅ NEW: the instant preloader is "done", unlock reveal delays
+      document.documentElement.classList.remove('preloader-active');
+      document.documentElement.classList.add('preloader-done');
 
       // ✅ Start reveals as soon as preloader is "done"
       // (so the user doesn't wait longer than needed)
@@ -87,9 +101,17 @@ setTimeout(() => {
   if (preloader) {
     preloader.remove();
   }
+
+  // ✅ NEW: if failsafe triggers, unlock reveals immediately
+  document.documentElement.classList.remove('preloader-active');
+  document.documentElement.classList.add('preloader-done');
+
   // ✅ If preloader got stuck, still start reveals
   initScrollReveals();
 }, 5000);
+
+
+
 
 
 

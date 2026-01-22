@@ -1397,3 +1397,22 @@ h6 {
 .reveal-group > *[style*="--d"]{
   transition-delay: var(--d);
 }
+
+
+
+/* GLOBAL: change this number to control how soon reveals start AFTER the preloader */
+:root { --after-preloader-delay: 0ms; }  /* try 0ms, 100ms, 200ms */
+
+/* While preloader is up, force reveals to NOT animate yet */
+html.preloader-active .reveal,
+html.preloader-active .reveal-group > * {
+  transition-delay: 9999ms !important;
+}
+
+/* Once preloader is done, normal delays apply */
+html.preloader-done .reveal {
+  transition-delay: calc(var(--d, 0ms) + var(--after-preloader-delay)) !important;
+}
+html.preloader-done .reveal-group > * {
+  transition-delay: calc(var(--d, 0ms) + var(--after-preloader-delay)) !important;
+}
