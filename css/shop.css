@@ -754,7 +754,7 @@ img {
   background-color: black;
   padding: 2rem 0;
 
-  animation: slide 30s linear infinite;
+  animation: slide 8s linear infinite;
 
   will-change: transform;
   transform: translateZ(0);
