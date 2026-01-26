@@ -479,8 +479,8 @@ h1 {
     color: #fff;
   }
     #cs-navigation .cs-logo img {
-    width: clamp(5em, 4vw, 8em);
-    padding-top: 2rem;
+    width: clamp(7.5em, 4vw, 8.5em);
+    /* padding-top: 2rem; */
     height: auto;
     object-fit: contain;
   }

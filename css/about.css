@@ -228,7 +228,7 @@ h1 {
   }
 
   #cs-navigation .cs-logo img {
-    width: clamp(5em, 4vw, 8em);
+    width: clamp(7.5em, 4vw, 8.5em);
     object-fit: contain;
   }
 
@@ -1299,6 +1299,11 @@ img {
     aspect-ratio: 4 / 5; /* vertical-ish frame on phones */
   }
 }
+
+
+
+
+
 
 
 
