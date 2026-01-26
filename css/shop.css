@@ -1887,3 +1887,135 @@ html.preloader-done .reveal {
 html.preloader-done .reveal-group > * {
   transition-delay: calc(var(--d, 0ms) + var(--after-preloader-delay)) !important;
 }
+
+
+
+
+
+
+
+/* =========================
+   STRIPE MODAL (Payment Link)
+   ========================= */
+
+.stripe-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.stripe-modal.is-open {
+  display: block;
+}
+
+.stripe-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+}
+
+.stripe-modal__panel {
+  position: relative;
+  width: min(920px, calc(100% - 2rem));
+  height: min(720px, calc(100% - 2rem));
+  margin: 1rem auto;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+}
+
+.stripe-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.stripe-modal__title {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+.stripe-modal__close {
+  border: 0;
+  background: transparent;
+  font-size: 1.1rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0.35rem 0.5rem;
+}
+
+.stripe-modal__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.stripe-modal__frame {
+  width: 100%;
+  flex: 1;
+  border: 0;
+  border-radius: 12px;
+  background: #f7f7f7;
+}
+
+.stripe-modal__note {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.stripe-modal__actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.stripe-modal__primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  background: #111;
+  color: #fff;
+}
+
+.stripe-modal__secondary {
+  padding: 0.8rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .stripe-modal__panel {
+    width: calc(100% - 1.25rem);
+    height: calc(100% - 1.25rem);
+    margin: 0.625rem auto;
+    border-radius: 14px;
+  }
+
+  .stripe-modal__actions {
+    justify-content: stretch;
+  }
+
+  .stripe-modal__primary,
+  .stripe-modal__secondary {
+    width: 100%;
+  }
+}
