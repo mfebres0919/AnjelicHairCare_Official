@@ -2371,7 +2371,7 @@ footer {
 
 
 .footer-logo img {
-  width: clamp(6rem, 8vh, 10rem);
+  width: clamp(7rem, 8vh, 10rem);
 }
 
 

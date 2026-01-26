@@ -1667,6 +1667,11 @@ footer {
 }
 
 
+.footer-logo img {
+  width: clamp(7rem, 8vh, 10rem);
+}
+
+
 .quick-links-box ul {
   margin: 0;
   padding: 1rem;
