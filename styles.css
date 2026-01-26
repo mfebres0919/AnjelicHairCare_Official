@@ -1856,6 +1856,7 @@ img {
 .card-1-content h1 {
   padding-bottom: 1rem;
   line-height: 2.8rem;
+
 }
 
 
@@ -2138,10 +2139,11 @@ img {
 }
 
 .testimonial-card h3 {
-  font-family: "DM Serif Display", serif;
+  font-family: "Anton", sans-serif;
+  font-weight: normal;
+  letter-spacing: 1.2px;  
   text-transform: uppercase;
-  letter-spacing: 1.5px;
-  line-height: 2rem;
+  line-height: 3.5rem;
 }
 
 .stars {
@@ -2312,7 +2314,7 @@ img {
 }
 
 .cta-2-header h1 {
-  line-height: 2.8rem;
+    line-height: 4rem;
 }
 
 .cta-2-paragraph {
@@ -2365,6 +2367,11 @@ footer {
   text-align: center;
   flex-wrap: wrap;   /* ← THIS FIXES THE SHIFT */
   padding: 2rem 0;
+}
+
+
+.footer-logo img {
+  width: clamp(6rem, 8vh, 10rem);
 }
 
 

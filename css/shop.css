@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -1050,7 +1054,7 @@ img {
 ========================= */
 
 .shop-section {
-  padding: 3rem 1.5rem;
+  padding: 5rem 1rem 0rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1124,6 +1128,7 @@ img {
 .shop-card h2 {
   margin-bottom: 0.5rem;
   font-size: 1.4rem;
+  font-weight: normal;
   letter-spacing: 1.5px;
   line-height: 2.5rem;
   margin: 0.75rem 0 1rem;
@@ -1562,6 +1567,11 @@ img {
     opacity: 0.55;
   }
 
+  .why {
+      padding-top: 0;
+      margin: 1.2rem;    
+  }
+
 }
 
 /* Reduced motion */
@@ -1601,7 +1611,7 @@ img {
 }
 
 .cta-2-header h1 {
-    line-height: 2.8rem;
+    line-height: 4rem;
 }
 
 .cta-2-paragraph {
@@ -1894,128 +1904,3 @@ html.preloader-done .reveal-group > * {
 
 
 
-/* =========================
-   STRIPE MODAL (Payment Link)
-   ========================= */
-
-.stripe-modal {
-  position: fixed;
-  inset: 0;
-  display: none;
-  z-index: 9999;
-}
-
-.stripe-modal.is-open {
-  display: block;
-}
-
-.stripe-modal__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-}
-
-.stripe-modal__panel {
-  position: relative;
-  width: min(920px, calc(100% - 2rem));
-  height: min(720px, calc(100% - 2rem));
-  margin: 1rem auto;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35);
-  display: flex;
-  flex-direction: column;
-}
-
-.stripe-modal__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.85rem 1rem;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
-}
-
-.stripe-modal__title {
-  margin: 0;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
-}
-
-.stripe-modal__close {
-  border: 0;
-  background: transparent;
-  font-size: 1.1rem;
-  cursor: pointer;
-  line-height: 1;
-  padding: 0.35rem 0.5rem;
-}
-
-.stripe-modal__body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1rem;
-  flex: 1;
-}
-
-.stripe-modal__frame {
-  width: 100%;
-  flex: 1;
-  border: 0;
-  border-radius: 12px;
-  background: #f7f7f7;
-}
-
-.stripe-modal__note {
-  margin: 0;
-  font-size: 0.85rem;
-  opacity: 0.85;
-}
-
-.stripe-modal__actions {
-  display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-}
-
-.stripe-modal__primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.8rem 1.1rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 600;
-  background: #111;
-  color: #fff;
-}
-
-.stripe-modal__secondary {
-  padding: 0.8rem 1.1rem;
-  border-radius: 999px;
-  border: 1px solid rgba(0,0,0,0.18);
-  background: #fff;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-@media (max-width: 520px) {
-  .stripe-modal__panel {
-    width: calc(100% - 1.25rem);
-    height: calc(100% - 1.25rem);
-    margin: 0.625rem auto;
-    border-radius: 14px;
-  }
-
-  .stripe-modal__actions {
-    justify-content: stretch;
-  }
-
-  .stripe-modal__primary,
-  .stripe-modal__secondary {
-    width: 100%;
-  }
-}
